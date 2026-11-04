@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>My Christmas Wishlist</title>
-<link href="https://fonts.googleapis.com/css2?family=Kalam&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<style>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>My Christmas Wishlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
 :root{--ink:#efe3cf;--kraft:#cfc3ab;--red:#c23a32;--hand:'Kalam','Segoe Script','Bradley Hand',cursive;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);font-size:10px}
 *{box-sizing:border-box}
@@ -43,20 +45,33 @@ body{margin:0;background:#0a0b0c;overflow-x:hidden}
 .dd.on{opacity:var(--o);clip-path:inset(0);transition:opacity 1.2s ease,clip-path 2s ease-out}
 .dd.off{opacity:0;clip-path:inset(0);transition:opacity 1.8s ease}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style></head><body>
-<div id="stage"><div id="art"></div></div>
-<div id="ov"><div id="card"><button id="x" aria-label="Close">×</button><div class="ph" id="cph"></div><h2 id="ct"></h2><p class="pr" id="cp"></p><p id="d"></p><a id="lk" href="#" target="_blank" rel="noopener">View item ↗</a></div></div>
-<script>
+</style>
+</head>
+<body>
+  <div id="stage">
+    <div id="art"></div>
+  </div>
+  <div id="ov">
+    <div id="card">
+      <button id="x" aria-label="Close">×</button>
+      <div class="ph" id="cph"></div>
+      <h2 id="ct"></h2>
+      <p class="pr" id="cp"></p>
+      <p id="d"></p>
+      <a id="lk" href="#" target="_blank" rel="noopener">View item ↗</a>
+    </div>
+  </div>
+  <script>
 // Updated items configured with local cutout image paths
 const ITEMS=[
- {name:"RCA to HDMI Converter",full:"Bee Trendy RCA to HDMI AV Converter",price:"£5.22",desc:"Converts composite RCA audio and video output to HDMI for connection to a modern display.",link:"https://www.amazon.co.uk/dp/B0FMYZ3Y9C",img:"cutouts/rca.png",g:"#3d5a9e",a:"#2f4d7a",b:"#101c30"},
- {name:"7-Port USB 3.0 Hub",full:"4Ft 7-Port USB 3.0 Desktop Hub",price:"£15.99",desc:"A desktop hub that adds seven USB 3.0 ports for connecting peripherals.",link:"https://www.amazon.co.uk/dp/B0D3D67D5J",img:"cutouts/usb-hub.png",g:"#c4434b",a:"#4d4538",b:"#1a1a16"},
- {name:"USB Fingerprint Reader",full:"WeAct Windows Hello USB Fingerprint Reader",price:"£5.53",desc:"A USB fingerprint reader for biometric sign-in on compatible Windows devices.",link:"https://www.aliexpress.com/item/1005012693895809.html",img:"cutouts/fingerprint.png",g:"#5c8a62",a:"#2a3a4a",b:"#111a24"},
- {name:"RØDE PodMic",full:"RØDE PodMic Dynamic XLR Microphone",price:"£73.79",desc:"A dynamic XLR microphone designed for spoken-word recording and broadcasting.",link:"https://www.amazon.co.uk/dp/B07MSCRCVK",img:"cutouts/podmic.png",g:"#3c7a56",a:"#5c4630",b:"#1c1612"},
- {name:"Mic Boom Arm",full:"TONOR Low-Profile Microphone Boom Arm",price:"£18.77",desc:"A desk-mounted, low-profile arm for positioning a microphone while recording or streaming.",link:"https://www.amazon.co.uk/dp/B0CFKHCQ8W",img:"cutouts/boom-arm.png",g:"#d77a82",a:"#2d4a3a",b:"#0f1914"},
- {name:"Monitor Arm",full:"NB Ergonomic Smoovex Monitor Arm",price:"£18.99",desc:"A monitor arm for mounting and adjusting a display at a desk.",link:"https://www.amazon.co.uk/dp/B0G523STF2",img:"cutouts/monitor-arm.png",g:"#3d5a9e",a:"#5a4128",b:"#1c140d"},
- {name:"Camera Desk Mount",full:"JEBUTU Camera Desk Mount",price:"£31.76",desc:"An adjustable desk mount for positioning a camera at a work surface.",link:"https://www.amazon.co.uk/dp/B0DFP8GRJ5",img:"cutouts/camera-mount.png",g:"#c4434b",a:"#2a3a4a",b:"#111a24"},
- {name:"Right-Angle Aux Cable",full:"UGREEN Right-Angle 3.5 mm Aux Cable (2 m)",price:"£6.75",desc:"A 2-metre stereo aux cable with a right-angle 3.5 mm plug for connecting audio devices.",link:"https://www.amazon.co.uk/dp/B00LM0U8M2",img:"cutouts/aux-cable.png",g:"#5c8a62",a:"#4d4538",b:"#1a1a16"}
+ {name:"RCA to HDMI Converter",full:"Bee Trendy RCA to HDMI AV Converter",price:"£5.22",desc:"Converts composite RCA audio and video output to HDMI for connection to a modern display.",link:"https://www.amazon.co.uk/dp/B0FMYZ3Y9C",img:"cutouts/avtohdmi.png",g:"#3d5a9e",a:"#2f4d7a",b:"#101c30"},
+ {name:"7-Port USB 3.0 Hub",full:"4Ft 7-Port USB 3.0 Desktop Hub",price:"£15.99",desc:"A desktop hub that adds seven USB 3.0 ports for connecting peripherals.",link:"https://www.amazon.co.uk/dp/B0D3D67D5J",img:"cutouts/usbhub.png",g:"#c4434b",a:"#4d4538",b:"#1a1a16"},
+ {name:"USB Fingerprint Reader",full:"WeAct Windows Hello USB Fingerprint Reader",price:"£5.53",desc:"A USB fingerprint reader for biometric sign-in on compatible Windows devices.",link:"https://www.aliexpress.com/item/1005012693895809.html",img:"cutouts/fingerprintreader%3B.png",g:"#5c8a62",a:"#2a3a4a",b:"#111a24"},
+ {name:"RØDE PodMic",full:"RØDE PodMic Dynamic XLR Microphone",price:"£73.79",desc:"A dynamic XLR microphone designed for spoken-word recording and broadcasting.",link:"https://www.amazon.co.uk/dp/B07MSCRCVK",img:"cutouts/rodemic.png",g:"#3c7a56",a:"#5c4630",b:"#1c1612"},
+ {name:"Mic Boom Arm",full:"TONOR Low-Profile Microphone Boom Arm",price:"£18.77",desc:"A desk-mounted, low-profile arm for positioning a microphone while recording or streaming.",link:"https://www.amazon.co.uk/dp/B0CFKHCQ8W",img:"cutouts/micarm.png",g:"#d77a82",a:"#2d4a3a",b:"#0f1914"},
+ {name:"Monitor Arm",full:"NB Ergonomic Smoovex Monitor Arm",price:"£18.99",desc:"A monitor arm for mounting and adjusting a display at a desk.",link:"https://www.amazon.co.uk/dp/B0G523STF2",img:"cutouts/monitorarm.png",g:"#3d5a9e",a:"#5a4128",b:"#1c140d"},
+ {name:"Camera Desk Mount",full:"JEBUTU Camera Desk Mount",price:"£31.76",desc:"An adjustable desk mount for positioning a camera at a work surface.",link:"https://www.amazon.co.uk/dp/B0DFP8GRJ5",img:"cutouts/cameramount.png",g:"#c4434b",a:"#2a3a4a",b:"#111a24"},
+ {name:"Right-Angle Aux Cable",full:"UGREEN Right-Angle 3.5 mm Aux Cable (2 m)",price:"£6.75",desc:"A 2-metre stereo aux cable with a right-angle 3.5 mm plug for connecting audio devices.",link:"https://www.amazon.co.uk/dp/B00LM0U8M2",img:"cutouts/35mmcable.png",g:"#5c8a62",a:"#4d4538",b:"#1a1a16"}
 ];
 const SP=[['🎄',2.8],['⛄',2.8],['❄️',2.1],['🎅',2.2],['🔔',2.1],['🎁',2.1],['🦌',2.7],['🧦',2.4],['🍪',2.1]];
 // torn paper: [css(m), colour, polygon, desktopOnly]
